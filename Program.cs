@@ -1,0 +1,19 @@
+﻿//Namespace;
+using Troco;
+
+//Entrada de dados;
+Console.Write("Preço unitário do produto: ");
+double precoUnitarioProduto = double.Parse(Console.ReadLine());
+Console.Write("Quantidade comprada: ");
+int quantidadeProduto = int.Parse(Console.ReadLine());
+Console.Write("Dinheiro recebido: ");
+double dinheiroRecebido = double.Parse(Console.ReadLine());
+
+//Instânciação do construtor;
+Troco1 troco = new Troco1(precoUnitarioProduto, quantidadeProduto, dinheiroRecebido);
+
+//Método que retorna o troco que deve ser dado ao cliente;
+double troco1 = troco.Troco();
+
+//Saída de dados.
+Console.WriteLine($"TROCO = {troco1:F2}");
