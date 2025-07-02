@@ -1,4 +1,4 @@
-﻿namespace Troco
+namespace Troco
 {
     internal class Troco1
     {
@@ -15,10 +15,19 @@
             DinheiroRecebido = dinheiroRecebido;
         }
 
-        //Método que retorna o troco que será devolvido ao cliente.
-        public double Troco()
+        //Método que verifica se o cliente possui dinheiro suficiente e retorna o troco que será devolvido ao cliente.
+        public void Troco()
         {
-            return DinheiroRecebido - PrecoUnitarioProduto * QuantidadeProduto;
+            if (DinheiroRecebido >= (PrecoUnitarioProduto * QuantidadeProduto))
+            {
+                double troco = DinheiroRecebido - PrecoUnitarioProduto * QuantidadeProduto;
+                Console.WriteLine($"TROCO = {troco:F2}");
+            }
+            else
+            {
+                double resto = PrecoUnitarioProduto * QuantidadeProduto - DinheiroRecebido;
+                Console.WriteLine($"DINHEIRO INSUFICIENTE. FALTAM {resto:F2} REAIS");
+            }
         }
     }
 }
